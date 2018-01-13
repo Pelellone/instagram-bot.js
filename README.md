@@ -1,7 +1,7 @@
 # InstagramBot.js
 [![License](https://img.shields.io/badge/license-GLPv3-brightgreen.svg)]()
 [![powered by webdriverio](https://img.shields.io/badge/powered%20by-webdriverio-46aef7.svg)](https://github.com/webdriverio/webdriverio)
-[![Version](https://img.shields.io/badge/version-v0.1-lightgrey.svg)](https://github.com/ptkdev/ptkdev-telegram-bot/releases)
+[![Version](https://img.shields.io/badge/version-v0.1-lightgrey.svg)](https://github.com/ptkdev/instagram-bot.js/releases)
 [![Slack Chat](https://img.shields.io/badge/chat%20on-Slack-orange.svg)](https://slack.ptkdev.io)
 [![Paypale Donate](https://img.shields.io/badge/donate-PayPal-red.svg)](https://paypal.me/ptkdev)
 
