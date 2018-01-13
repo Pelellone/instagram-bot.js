@@ -1,7 +1,7 @@
 /**
  * InstagramBot.js
  * =====================
- * My personal bot @ptkdev_bot
+ * Instagram Bot made with love and nodejs
  *
  * @author:     Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)
  * @file:       bot.js
@@ -26,7 +26,7 @@
 /**
  * Libs
  * =====================
- * telegraf and other open source library
+ * Open source library
  *
  * @author:     Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)
  * @license:    This code and contributions have 'GNU General Public License v3'

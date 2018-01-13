@@ -18,7 +18,10 @@
   "keywords": [
     "bot",
     "ptkdev",
-    "telegram"
+    "instagram",
+    "instagram-bot",
+    "selenium",
+    "webdriverio"
   ],
   "author": "Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)",
   "license": "GPL-3.0",

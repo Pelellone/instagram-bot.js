@@ -7,7 +7,7 @@
 
 [![https://instagram-bot.js.ptkdev.io](https://ptkdev.it/img/bot/ptkdev-instagram-bot.gif)](https://instagram-bot.js.ptkdev.io)
 
-## Setup - Debian Server
+# Setup - Debian Server
 ### Install bot dependencies:
 1. `sudo apt-get install default-jre build-essential xvfb libssl-dev curl wget git chromium xauth`
 
@@ -26,12 +26,11 @@ If you need lastest version of chrome update binary files in bin folder:
 4. `sudo apt-get install nodejs`
 5. `npm install`
 
-
-### Setup - Run Selenium
+## Run Selenium
 If you have desktop environment (example: gnome) run:
 1. `npm run start-selenium-desktop`
 
-If you have not desktop environment (on server) run:
+If you not have a desktop environment (example: run bot on server) run:
 1. `npm run start-selenium-server`
 
 #### Check if work, run:
@@ -42,7 +41,7 @@ BUG: if you received `Unable to access jarfile` edit `sh` files in `bin folder` 
 
 `java -Dwebdriver.chrome.driver="/home/your_name/instagram-bot.js/bin/chromedriver" -jar ./home/your_name/instagram-bot.js/bin/selenium-server-standalone.jar`
 
-## Setup - Run Bot
+## Run Bot
 1. Copy root file `config.js.tpl` to `config.js`, fill it properly.
 2. Start the bot via `npm run start`.
 
