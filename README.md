@@ -1,11 +1,19 @@
 # InstagramBot.js
 [![License](https://img.shields.io/badge/license-GLPv3-brightgreen.svg)]()
 [![powered by webdriverio](https://img.shields.io/badge/powered%20by-webdriverio-46aef7.svg)](https://github.com/webdriverio/webdriverio)
-[![Version](https://img.shields.io/badge/version-v0.1-lightgrey.svg)](https://github.com/ptkdev/instagram-bot.js/releases)
+[![Version](https://img.shields.io/badge/version-v0.1.1-lightgrey.svg)](https://github.com/ptkdev/instagram-bot.js/releases)
 [![Slack Chat](https://img.shields.io/badge/chat%20on-Slack-orange.svg)](https://slack.ptkdev.io)
 [![Paypale Donate](https://img.shields.io/badge/donate-PayPal-red.svg)](https://paypal.me/ptkdev)
 
 [![https://instagram-bot.js.ptkdev.io](https://ptkdev.it/img/bot/ptkdev-instagram-bot.gif)](https://instagram-bot.js.ptkdev.io)
+
+# Features
+- [✓] Login
+- [✓] 2FA
+- [✓] Multi-Session
+- [✓] Errors manager (bad pin, bad password)
+- [✓] Screenshot and Verbose logger
+- [✓] Like Mode Classic: bot select random hashtag from config list and like 1 random photo (of last 20), and repeat this all time | 750-900 like/day. Limit is 1000/day for ig. This is safe mode.
 
 # Setup - Debian Server
 ### Install bot dependencies:
@@ -44,6 +52,12 @@ BUG: if you received `Unable to access jarfile` edit `sh` files in `bin folder` 
 ## Run Bot
 1. Copy root file `config.js.tpl` to `config.js`, fill it properly.
 2. Start the bot via `npm run start`.
+
+#### Pin
+If you received sms or email pin edit `loginpin.txt` and insert it on first line. Wait 3 minutes...
+
+#### Check if work:
+See logs: `cat ./logs/debug.log` or png images in ./logs/screenshot
 
 # License
 

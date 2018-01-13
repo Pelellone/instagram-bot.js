@@ -58,7 +58,7 @@ const options = {
 /**
  * Init
  * =====================
- * Get username, pasword and hashtag of bot from /config.js
+ * Get username, password and hashtag of bot from /config.js
  * If not exist rename config.js.tmpl to config.js and change strings
  *
  * @author:     Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)
@@ -75,7 +75,7 @@ var bot_likemode_timer = ""; //need global
 /**
  * Import libs
  * =====================
- * Flow and utily routes
+ * Flow and utilty routes
  *
  * @author:     Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)
  * @license:    This code and contributions have 'GNU General Public License v3'

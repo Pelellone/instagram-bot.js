@@ -1,13 +1,13 @@
 {
   "name": "InstagramBot.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Instagram Bot made with love and nodejs",
   "main": "bot.js",
   "scripts": {
-    "start": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
+    "start": "forever -o ./logs/debug.log -e ./logs/errors.log start bot.js",
     "start-selenium-desktop": "pm2 start bin/run-selenium-desktop.sh",
     "start-selenium-server": "pm2 start bin/run-selenium-server.sh",
-    "stop": "pm2 stop bot.js",
+    "stop": "forever stop bot.js",
     "stop-selenium-desktop": "pm2 stop bin/run-selenium-desktop.sh",
     "stop-selenium-server": "pm2 stop bin/run-selenium-server.sh"
   },
