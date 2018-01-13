@@ -28,7 +28,7 @@ If you need lastest version of chrome update binary files in bin folder:
 2. `/bin/selenium-server-standalone.jar` [Download](http://www.seleniumhq.org/download/)
 
 ### Install Node and bot dependencies
-1. `curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh `
+1. `curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh `
 2. `sudo bash nodesource_setup.sh`
 3. `rm nodesource_setup.sh`
 4. `sudo apt-get install nodejs`
