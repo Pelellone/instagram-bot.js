@@ -1,0 +1,38 @@
+{
+  "name": "InstagramBot.js",
+  "version": "0.1.0",
+  "description": "Instagram Bot made with love and nodejs",
+  "main": "bot.js",
+  "scripts": {
+    "start": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
+    "start-selenium-desktop": "pm2 start bin/run-selenium-desktop.sh",
+    "start-selenium-server": "pm2 start bin/run-selenium-server.sh",
+    "stop": "pm2 stop bot.js",
+    "stop-selenium-desktop": "pm2 stop bin/run-selenium-desktop.sh",
+    "stop-selenium-server": "pm2 stop bin/run-selenium-server.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptkdev/instagram-bot.js.git"
+  },
+  "keywords": [
+    "bot",
+    "ptkdev",
+    "telegram"
+  ],
+  "author": "Patryk Rzucidlo [@ptkdev] <info@ptkdev.it> (https://ptkdev.it)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ptkdev/instagram-bot.js/issues"
+  },
+  "homepage": "https://instagram-bot.js.ptkdev.io",
+  "dependencies": {
+    "forever": "^0.15.0",
+    "pm2": "^2.7.2",
+    "path": "^0.12.7",
+    "webdriverio": "^4.10.1"
+  },
+  "engines": {
+    "node": ">=8.1.3"
+  }
+}

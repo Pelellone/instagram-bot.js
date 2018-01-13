@@ -1,0 +1,115 @@
+######################################################################################
+# License:        MIT - http://opensource.org/licenses/MIT                           #
+# Author:         Patryk Rzucidlo (@PTKDev) <support@ptkdev.it> https://ptkdev.it    #
+# Original:       octocat - https://github.com/octocat                               #
+# Latest version: https://github.com/ptkdev/dotfiles                                 #
+######################################################################################
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Eclipse #
+###########
+.classpath
+.project
+.settings
+.idea
+.idea/
+.metadata
+*.iml
+*.ipr
+proguard/
+
+# Logs and databases #
+######################
+logs/*.log
+logs/screenshot/*.png
+*.log
+*.sql
+*.sqlite
+*.lock
+yarn-debug.log
+yarn-error.log
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python #
+##########
+*.pyc
+*.pyo
+
+# KDE/Linux generated files #
+#############################
+.directory
+
+# Backup generated files #
+##########################
+*~
+*.swp
+*.bak
+*#
+
+# Android #
+###########
+*.apk
+*.ap_
+*.dex
+bin/
+gen/
+.gradle/
+build/
+local.properties
+
+# Vagrant #
+###########
+/.vagrant
+
+# PHP #
+#######
+./config.php
+phpunit.xml
+/vendor
+composer.phar
+
+# Runtime data #
+################
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# NodeJS #
+##########
+npm-debug.log
+/node_modules
+/bower_components
+package-lock.json
+
+# NodePress.js #
+################
+config.js
