@@ -59,6 +59,28 @@ If you received sms or email pin edit `loginpin.txt` and insert it on first line
 #### Check if work:
 See logs: `cat ./logs/debug.log` or png images in ./logs/screenshot
 
+# TODO
+Features:
+* likemode_superlike - select random hashtag from config list and like 3 random photo of same user | 750-900 like/day.
+* fdfmode_defollowall - defollow all your following (not defollow users in whitelist) | 90 defollow/hour.
+* fdfmode_classic - follow user from random hashtag and defollow after 1h | 300 follow-defollow/day.
+* Add total like/day in config.js 
+
+Fix:
+* refactor for remove eval()
+
+Nice have:
+* docker container
+
+# Social Manager Tools
+Available:
+- [InstagramBot.js](https://github.com/social-manager-tools/instagram-bot.js)
+
+Coming soon:
+- [TwitterBot.js](https://github.com/social-manager-tools/twitter-bot.js)
+- [FacebookPageBot.js](https://github.com/social-manager-tools/facebook-page-bot.js)
+- [TelegramWordpressBot.js](https://github.com/social-manager-tools/telegram-wordpress-news-bot.js)
+
 # License
 
 GNU GENERAL PUBLIC LICENSE
