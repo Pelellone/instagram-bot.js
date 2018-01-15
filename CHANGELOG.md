@@ -1,6 +1,6 @@
 # v0.2.1 (January 15, 2018)
 
-* Ops: bad run script in package.js
+* Ops: bad run script in package.json
 
 
 # v0.2.0 (January 15, 2018)
