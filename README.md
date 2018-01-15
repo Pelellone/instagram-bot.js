@@ -66,7 +66,7 @@ Features:
 * fdfmode_classic - follow user from random hashtag and defollow after 1h | 300 follow-defollow/day.
 * Add total like/day in config.js 
 
-Nice to have:
+Nice have:
 * docker container
 
 # Social Manager Tools
