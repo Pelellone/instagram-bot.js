@@ -9,3 +9,12 @@
  * @changelog:  0.1 initial release
  *
  */
+class Fdfmode_classic {
+    constructor(bot, config, utils) {
+        this.bot = bot;
+        this.config = config;
+        this.utils = utils;
+    }
+}
+
+module.exports = (bot, config, utils) => { return new Fdfmode_classic(bot, config, utils); };
