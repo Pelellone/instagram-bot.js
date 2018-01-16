@@ -152,20 +152,21 @@ async function start_likemode_classic(bot, config, utils) {
  */
 function start_twofa_check() {
     utils.logger("[INFO]", "twofa", "instagram request pin?");
-    bot.getAttribute('#choice_1', 'value').then(function(attr) {
+    try {
+        let attr = await bot.getAttribute('#choice_1', 'value');
         if (config.debug == true)
             utils.logger("[DEBUG]", "twofa", "attr = " + attr);
         utils.logger("[INFO]", "twofa", "yes, instagram require security pin... You can not pass!1!111! (cit.)");
         utils.screenshot(bot, "twofa", "check_pin_request");
         pin_status = 1;
-    }).catch(function(err) {
+    } catch (err) {
         if (config.debug == true)
             utils.logger("[DEBUG]", "twofa", err);
         utils.logger("[INFO]", "twofa", "no, bot is at work (started)... Wait...");
         utils.logger("[INFO]", "twofa", "starting current mode");
         utils.screenshot(bot, "twofa", "check_nopin");
         pin_status = 0;
-    });
+    }
 }
 
 /**
