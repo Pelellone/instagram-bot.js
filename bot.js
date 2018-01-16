@@ -107,9 +107,9 @@ let pin_status = "";
  * @changelog:  0.1 initial release
  *
  */
-function switch_mode(bot, config, utils) {
+async function switch_mode(bot, config, utils) {
     if (config.bot_mode == "likemode_classic")
-        start_likemode_classic(bot, config, utils);
+        await start_likemode_classic(bot, config, utils);
 }
 
 /**
@@ -123,17 +123,20 @@ function switch_mode(bot, config, utils) {
  * @changelog:  0.1 initial release
  *
  */
-function start_likemode_classic(bot, config, utils) {
+async function start_likemode_classic(bot, config, utils) {
     let likemode_classic = require(__dirname + '/modules/likemode_classic.js')(bot, config, utils);
     utils.logger("[INFO]", "likemode", "classic");
-    let timer = setInterval(function() {
-        utils.logger("[INFO]", "like", "loading...");
+    let today = "";
+    do {
+        today = new Date();
+        utils.logger("[INFO]", "like", "loading... " + new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds()));
         likemode_classic.like_open_hashtagpage();
         utils.sleep(utils.random_interval(4, 8));
-        likemode_classic.like_get_urlpic();
+        await likemode_classic.like_get_urlpic();
         utils.sleep(utils.random_interval(4, 8));
-        like_status = likemode_classic.like_click_heart();
-    }, utils.random_interval(96, 108));
+        like_status = await likemode_classic.like_click_heart();
+        utils.sleep(utils.random_interval(60, 100));
+    } while (true);
 }
 
 /**
@@ -176,7 +179,7 @@ function start_twofa_check() {
  * @changelog:  0.1 initial release
  *
  */
-function start_twofa() {
+async function start_twofa() {
     let twofa = require(__dirname + '/modules/2FA.js')(bot, config, utils);
     utils.logger("[INFO]", "twofa", "loading...");
     twofa.sendpin();
@@ -185,7 +188,7 @@ function start_twofa() {
     utils.sleep(utils.random_interval(4, 8));
     twofa.submit();
     utils.sleep(utils.random_interval(4, 8));
-    twofa_status = twofa.submitverify();
+    twofa_status = await twofa.submitverify();
     utils.sleep(utils.random_interval(4, 8));
     bot = twofa.get_bot();
 }
@@ -201,7 +204,7 @@ function start_twofa() {
  * @changelog:  0.1 initial release
  *
  */
-function start_login() {
+async function start_login() {
     let login = require(__dirname + '/modules/login.js')(bot, config, utils);
     utils.logger("[INFO]", "login", "loading...");
     login.open_loginpage(utils);
@@ -212,7 +215,7 @@ function start_login() {
     utils.sleep(utils.random_interval(4, 8));
     login.submit();
     utils.sleep(utils.random_interval(4, 8));
-    login_status = login.submitverify();
+    login_status = await login.submitverify();
     utils.logger("[INFO]", "login", "login_status is " + login_status);
     bot = login.get_bot();
 }

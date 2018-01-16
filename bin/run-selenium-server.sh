@@ -1,2 +1,2 @@
 #!/bin/sh
-xvfb-run --server-args='-screen 0, 1024x768x16' java -Dwebdriver.chrome.driver="./chromedriver" -jar ./selenium-server-standalone.jar
+xvfb-run --server-args='-screen 0, 1920x1080x16' java -Dwebdriver.chrome.driver="/home/ptkdev/instagram-bot.js/bin/chromedriver" -jar /home/ptkdev/instagram-bot.js/bin/selenium-server-standalone.jar

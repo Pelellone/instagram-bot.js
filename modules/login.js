@@ -92,19 +92,20 @@ class Login {
      * @changelog:  0.1 initial release
      *
      */
-    submitverify() {
+    async submitverify() {
         this.utils.logger("[INFO]", "login", "checkerrors");
         let self = this;
         let status = null;
-        this.bot.getText('#slfErrorAlert').then(function(text) {
+        try {
+            let text = await this.bot.getText('#slfErrorAlert');
             status = 0;
             self.utils.logger("[ERROR]", "login", text + " (restart bot and retry...)");
             self.utils.screenshot(self.bot, "login", "checkerrors_error");
-        }).catch(function(err) {
+        } catch (err) {
             status = 1;
             self.utils.logger("[INFO]", "login", "password is correct");
             self.utils.screenshot(self.bot, "login", "checkerrors");
-        });
+        }
         this.utils.sleep(this.utils.random_interval(4, 8));
         return status;
     }

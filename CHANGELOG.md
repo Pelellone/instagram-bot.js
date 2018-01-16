@@ -1,3 +1,14 @@
+# v0.3.0 BETA (January 16, 2018)
+
+* Refactor: moved to async wait
+* Refactor: add pm2 and forever to npm run
+* Update: chromedriver binary
+* Fix: get url picture selector
+* Fix: <3 selector
+* Fix: screen server resolution
+* Bug: 2FA not work but work 2FA-security location error flow
+
+
 # v0.2.1 (January 15, 2018)
 
 * Ops: bad run script in package.json

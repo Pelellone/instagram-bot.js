@@ -1,7 +1,7 @@
 # InstagramBot.js
 [![License](https://img.shields.io/badge/license-GLPv3-brightgreen.svg)]()
 [![powered by webdriverio](https://img.shields.io/badge/powered%20by-webdriverio-46aef7.svg)](https://github.com/webdriverio/webdriverio)
-[![Version](https://img.shields.io/badge/version-v0.2.1-lightgrey.svg)](https://github.com/ptkdev/instagram-bot.js/releases)
+[![Version](https://img.shields.io/badge/version-v0.3-lightgrey.svg)](https://github.com/ptkdev/instagram-bot.js/releases)
 [![Slack Chat](https://img.shields.io/badge/chat%20on-Slack-orange.svg)](https://slack.ptkdev.io)
 [![Paypale Donate](https://img.shields.io/badge/donate-PayPal-red.svg)](https://paypal.me/ptkdev)
 
@@ -51,7 +51,7 @@ BUG: if you received `Unable to access jarfile` edit `sh` files in `bin folder` 
 
 ## Run Bot
 1. Copy root file `config.js.tpl` to `config.js`, fill it properly.
-2. Start the bot via `npm run start` or deamon forever `npm run start-deamon`
+2. Start the bot via `npm run start` or pm2 `npm run start-pm2`
 
 #### Pin
 If you received sms or email pin edit `loginpin.txt` and insert it on first line. Wait 3 minutes...

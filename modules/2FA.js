@@ -29,7 +29,7 @@ class Twofa {
      *
      */
     requestpin() {
-        this.utils.logger("[WARNING]", "twofa", "please insert pin in loginpin.txt and wait 3 minutes... (tic... tac... tic... tac... tic...)");
+        this.utils.logger("[WARNING]", "twofa", "please insert pin in loginpin.txt and wait 2-3 minutes... (tic... tac... tic... tac... tic...)");
         this.bot.click('form button');
     }
 
@@ -98,16 +98,15 @@ class Twofa {
         this.utils.logger("[INFO]", "twofa", "readpin");
         const fs = require('fs');
         let self = this;
-        fs.readFile(__dirname + "/../loginpin.txt", function(err, data) {
-            if (err) {
-                self.utils.logger("[INFO]", "error", err);
-            } else {
-                let pin = data.toString();
-                self.utils.logger("[INFO]", "twofa", pin);
-                self.bot.setValue('input[name="security_code"]', pin);
-                self.utils.screenshot(self.bot, "twofa", "readpin");
-            }
-        });
+        try {
+            let pin = fs.readFileSync(__dirname + "/../loginpin.txt").toString();
+            self.utils.logger("[INFO]", "twofa", pin);
+            self.bot.setValue('input[name="security_code"]', pin);
+            self.utils.screenshot(self.bot, "twofa", "readpin");
+        } catch (err) {
+            self.utils.logger("[INFO]", "twofa", "err" + err);
+        }
+
     }
 
     /**
@@ -137,18 +136,33 @@ class Twofa {
      * @changelog:  0.1 initial release
      *
      */
-    submitverify() {
+    async submitverify() {
         let self = this;
         let status = "";
-        this.bot.getAttribute('input[name="security_code"]', 'value').then(function(attr) {
+        let attr = "";
+        try {
+            attr = await this.bot.getAttribute('input[name="security_code"]', 'value');
             self.utils.logger("[ERROR]", "twofa", "twofa: OMG! You are slow... Restart bot and retry... Idiot...");
             self.utils.screenshot(self.bot, "twofa", "submitverify_error");
             status = 0;
-        }).catch(function(err) {
+        } catch (err) {
             self.utils.logger("[INFO]", "twofa", "pin is ok");
             self.utils.screenshot(self.bot, "twofa", "submitverify_ok");
             status = 1;
-        });
+        }
+        this.utils.sleep(this.utils.random_interval(4, 8));
+        if (status == 1) {
+            try {
+                attr = await this.bot.getAttribute('input[name="username"]', 'value');
+                self.utils.logger("[ERROR]", "twofa", "instagram error... auto logout... restart bot...");
+                self.utils.screenshot(self.bot, "twofa", "submitverify_error2");
+                status = 0;
+            } catch (err) {
+                self.utils.logger("[INFO]", "twofa", "instagram no have a crash");
+                self.utils.screenshot(self.bot, "twofa", "submitverify_ok2");
+                status = 1;
+            }
+        }
         this.utils.sleep(this.utils.random_interval(4, 8));
         return status;
     }

@@ -1,15 +1,17 @@
 {
   "name": "InstagramBot.js",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Instagram Bot made with love and nodejs",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "start-deamon": "forever -o ./logs/debug.log -e ./logs/errors.log start bot.js",
+    "start-forever": "forever -o ./logs/debug.log -e ./logs/errors.log start bot.js",
+    "start-pm2": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
     "start-selenium-desktop": "pm2 start bin/run-selenium-desktop.sh",
     "start-selenium-server": "pm2 start bin/run-selenium-server.sh",
     "stop": "node stop bot.js",
-    "stop-deamon": "forever stop bot.js",
+    "stop-forever": "forever stop bot.js",
+    "stop-pm2": "pm2 stop bot.js",
     "stop-selenium-desktop": "pm2 stop bin/run-selenium-desktop.sh",
     "stop-selenium-server": "pm2 stop bin/run-selenium-server.sh"
   },
@@ -35,7 +37,6 @@
     "forever": "^0.15.0",
     "path": "^0.12.7",
     "pm2": "^2.7.2",
-    "sleep": "^5.1.1",
     "system-sleep": "^1.3.6",
     "webdriverio": "^4.10.1"
   },
