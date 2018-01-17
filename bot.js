@@ -127,15 +127,22 @@ async function start_likemode_classic(bot, config, utils) {
     let likemode_classic = require(__dirname + '/modules/likemode_classic.js')(bot, config, utils);
     utils.logger("[INFO]", "likemode", "classic");
     let today = "";
+    let t1, t2, sec;
     do {
         today = new Date();
+        t1 = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds());
         utils.logger("[INFO]", "like", "loading... " + new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds()));
         likemode_classic.like_open_hashtagpage();
         utils.sleep(utils.random_interval(4, 8));
         await likemode_classic.like_get_urlpic();
         utils.sleep(utils.random_interval(4, 8));
         like_status = await likemode_classic.like_click_heart();
-        utils.sleep(utils.random_interval(60, 100));
+        today = new Date();
+        t2 = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds());
+        sec = Math.abs((t1.getTime() - t2.getTime())/ 1000);
+        utils.logger("[INFO]", "likemode", "seconds of loop "+sec+"... for miss ban bot wait "+(90 - sec)+"-"+(90 - sec + 15));
+        if(sec < 90)
+        utils.sleep(utils.random_interval(90 - sec, (90 - sec + 15)));
     } while (true);
 }
 
@@ -150,7 +157,7 @@ async function start_likemode_classic(bot, config, utils) {
  * @changelog:  0.1 initial release
  *
  */
-function start_twofa_check() {
+async function start_twofa_check() {
     utils.logger("[INFO]", "twofa", "instagram request pin?");
     try {
         let attr = await bot.getAttribute('#choice_1', 'value');
